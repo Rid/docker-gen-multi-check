@@ -10,5 +10,4 @@ ENV DOCKER_HOST unix:///tmp/docker.sock
 RUN wget -qO- $DOWNLOAD_URL | tar xvz -C /usr/local/bin
 ADD start.sh /start.sh
 
-ENTRYPOINT ["/bin/sh", "/start.sh"]
-CMD ["/bin/sh", "/usr/local/bin/docker-gen"]
+CMD ["/bin/sh", "/start.sh"]
