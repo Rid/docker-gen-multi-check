@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -eu pipefail
-
 echo "Attempting to connect to server-dnsmasq.server-cylo"
 until ping -c 1 server-dnsmasq.server-cylo; do
     printf '.'
