@@ -25,4 +25,5 @@ done
 echo "Was able to connect to all"
 
 echo "/usr/local/bin/docker-gen -endpoints ${DOCKER_GEN_ENDPOINTS} -wait 5s:30s -notify-sighup server-nginx-proxy.server-cylo -watch /etc/docker-gen/templates/nginx.tmpl /etc/nginx/conf.d/default.conf"
-/usr/local/bin/docker-gen -endpoints ${DOCKER_GEN_ENDPOINTS} -wait 5s:30s -notify-sighup server-nginx-proxy.server-cylo -watch /etc/docker-gen/templates/nginx.tmpl /etc/nginx/conf.d/default.conf
+
+exec "$@"

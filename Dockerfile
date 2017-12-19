@@ -10,4 +10,5 @@ ENV DOCKER_HOST unix:///tmp/docker.sock
 RUN wget -qO- $DOWNLOAD_URL | tar xvz -C /usr/local/bin
 ADD start.sh /start.sh
 
-CMD ["/bin/sh", "/start.sh"]
+ENTRYPOINT ["/bin/sh", "/start.sh"]
+CMD ["/usr/local/bin/docker-gen", "-endpoints ${DOCKER_GEN_ENDPOINTS}", "-wait 5s:30s", "-notify-sighup server-nginx-proxy.server-cylo", "-watch /etc/docker-gen/templates/nginx.tmpl /etc/nginx/conf.d/default.conf"]
